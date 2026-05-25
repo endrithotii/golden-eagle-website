@@ -146,6 +146,26 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 1px; transition: var(--transition); }
 
+/* ── Language toggle ── */
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.lang-toggle {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 40px;
+  padding: 5px 12px;
+}
+.lang-btn {
+  background: none; border: none;
+  color: var(--muted);
+  font-size: .75rem; font-weight: 700; letter-spacing: .08em;
+  cursor: pointer; padding: 2px 4px; border-radius: 4px;
+  transition: color .2s;
+}
+.lang-btn.active { color: var(--gold-lt); }
+.lang-btn:hover  { color: var(--text); }
+.lang-sep { color: rgba(255,255,255,.2); font-size: .7rem; }
+
 /* ═══════════════════════════════════════
    HERO
    ═══════════════════════════════════════ */

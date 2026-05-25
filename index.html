@@ -11,7 +11,6 @@
 </head>
 <body>
 
-  <!-- Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
 
@@ -22,30 +21,29 @@
       <span class="logo-text">GOLDEN EAGLE</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-      <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
-      <li><a href="#taste" class="nav-link" data-section="taste">Taste</a></li>
-      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-      <li><a href="#reviews" class="nav-link" data-section="reviews">Reviews</a></li>
+      <li><a href="#home"    class="nav-link active" data-section="home"    data-i18n="nav_home">Home</a></li>
+      <li><a href="#products" class="nav-link"       data-section="products" data-i18n="nav_products">Products</a></li>
+      <li><a href="#taste"   class="nav-link"        data-section="taste"   data-i18n="nav_taste">Taste</a></li>
+      <li><a href="#about"   class="nav-link"        data-section="about"   data-i18n="nav_about">About</a></li>
+      <li><a href="#reviews" class="nav-link"        data-section="reviews" data-i18n="nav_reviews">Reviews</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Contact Us</a>
-    <button class="nav-toggle" id="nav-toggle">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="sq">SQ</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Contact Us</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <!-- ═══ HERO ═══ -->
   <section class="hero" id="home">
-
-    <!-- Particle canvas -->
     <canvas id="particle-canvas"></canvas>
-
-    <!-- Background glow blobs -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
-
-    <!-- Floating decorative elements -->
     <div class="float-el fl-1">⚡</div>
     <div class="float-el fl-2">✦</div>
     <div class="float-el fl-3">◆</div>
@@ -53,58 +51,53 @@
     <div class="float-el fl-5">✦</div>
     <div class="float-el fl-6">◆</div>
 
-    <!-- Left copy -->
     <div class="hero-left">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        New Formula 2025
+        <span data-i18n="hero_badge">New Formula 2025</span>
       </div>
       <h1 class="hero-title">
-        <span class="title-line line-1">PURE</span>
-        <span class="title-line line-2">ENERGY</span>
+        <span class="title-line line-1" data-i18n="hero_title1">PURE</span>
+        <span class="title-line line-2" data-i18n="hero_title2">ENERGY</span>
       </h1>
-      <p class="hero-sub">Unleash unstoppable energy.<br/>Zero compromise — all power.</p>
+      <p class="hero-sub" data-i18n-html="hero_sub">Unleash unstoppable energy.<br/>Zero compromise — all power.</p>
       <div class="hero-actions">
         <a href="#products" class="btn-primary">
-          Shop Now
+          <span data-i18n="hero_shop">Shop Now</span>
           <span class="btn-arrow">→</span>
         </a>
         <a href="#taste" class="btn-ghost">
           <span class="play-icon">▶</span>
-          Watch Story
+          <span data-i18n="hero_watch">Watch Story</span>
         </a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-num">35+</span>
-          <span class="stat-label">Countries</span>
+          <span class="stat-label" data-i18n="hero_countries">Countries</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
           <span class="stat-num">30yr</span>
-          <span class="stat-label">Experience</span>
+          <span class="stat-label" data-i18n="hero_experience">Experience</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
           <span class="stat-num">200+</span>
-          <span class="stat-label">Employees</span>
+          <span class="stat-label" data-i18n="hero_employees">Employees</span>
         </div>
       </div>
     </div>
 
-    <!-- Center — can + orbit rings -->
     <div class="hero-center" id="hero-can-wrap">
       <div class="orbit-ring ring-outer"></div>
       <div class="orbit-ring ring-mid"></div>
       <div class="orbit-ring ring-inner"></div>
-
       <div class="can-spotlight"></div>
-
       <div class="can-container" id="can-container">
         <div class="can-glow"></div>
         <div class="can-3d" id="can-3d">
           <div class="can-body">
-            <!-- Can SVG rendered via CSS -->
             <div class="can-face front">
               <div class="can-brand-stripe"></div>
               <div class="can-logo-wrap">
@@ -116,204 +109,195 @@
             </div>
           </div>
         </div>
-
-        <!-- Orbit particles -->
         <div class="orbit-particle op-1">⚡</div>
         <div class="orbit-particle op-2">✦</div>
         <div class="orbit-particle op-3">◆</div>
         <div class="orbit-particle op-4">⚡</div>
-
-        <!-- Ground reflection -->
         <div class="can-reflection"></div>
       </div>
     </div>
 
-    <!-- Right — variant picker -->
     <div class="hero-right">
-      <p class="variants-label">Choose Variant</p>
+      <p class="variants-label" data-i18n="hero_variants_label">Choose Variant</p>
       <div class="variant-list" id="variant-list">
         <div class="variant-card active" data-flavor="classic" data-color="#d4a017" data-bg="#1a1200">
           <div class="variant-icon">⚡</div>
           <div class="variant-info">
-            <span class="variant-name">Classic</span>
+            <span class="variant-name" data-i18n="variant_classic">Classic</span>
             <span class="variant-price">€1.99</span>
           </div>
         </div>
         <div class="variant-card" data-flavor="sugar-free" data-color="#00c8ff" data-bg="#00111a">
           <div class="variant-icon">🔵</div>
           <div class="variant-info">
-            <span class="variant-name">Sugar Free</span>
+            <span class="variant-name" data-i18n="variant_sugar_free">Sugar Free</span>
             <span class="variant-price">€1.99</span>
           </div>
         </div>
         <div class="variant-card" data-flavor="red" data-color="#ff2244" data-bg="#1a0008">
           <div class="variant-icon">🔴</div>
           <div class="variant-info">
-            <span class="variant-name">Red Edition</span>
+            <span class="variant-name" data-i18n="variant_red">Red Edition</span>
             <span class="variant-price">€2.49</span>
           </div>
         </div>
         <div class="variant-card" data-flavor="tropical" data-color="#00e676" data-bg="#001a0a">
           <div class="variant-icon">🌴</div>
           <div class="variant-info">
-            <span class="variant-name">Tropical</span>
+            <span class="variant-name" data-i18n="variant_tropical">Tropical</span>
             <span class="variant-price">€2.49</span>
           </div>
         </div>
         <div class="variant-card" data-flavor="coffee" data-color="#8b5e3c" data-bg="#120800">
           <div class="variant-icon">☕</div>
           <div class="variant-info">
-            <span class="variant-name">Coffee</span>
+            <span class="variant-name" data-i18n="variant_coffee">Coffee</span>
             <span class="variant-price">€2.49</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom tagline -->
     <div class="hero-bottom-text">
-      <span>SOARINGLY</span>
-      <span class="outline-text">POWERFUL</span>
+      <span data-i18n="hero_bottom1">SOARINGLY</span>
+      <span class="outline-text" data-i18n="hero_bottom2">POWERFUL</span>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <span data-i18n="hero_scroll">Scroll</span>
     </div>
 
-    <!-- Award badge -->
     <div class="award-badge">
       <span class="award-icon">🏆</span>
       <div>
-        <span class="award-title">Kosovo Export Award</span>
-        <span class="award-year">Since 1994</span>
+        <span class="award-title" data-i18n="award_title">Kosovo Export Award</span>
+        <span class="award-year" data-i18n="award_year">Since 1994</span>
       </div>
     </div>
-
   </section>
 
-  <!-- ═══════════════════════════════════════ TICKER ═══════════════════════════════════════ -->
+  <!-- ═══ TICKER ═══ -->
   <div class="ticker-wrap">
     <div class="ticker-track">
       <span>GOLDEN EAGLE</span><span class="sep">⚡</span>
-      <span>ENERGY DRINK</span><span class="sep">⚡</span>
-      <span>35+ COUNTRIES</span><span class="sep">⚡</span>
-      <span>SINCE 1994</span><span class="sep">⚡</span>
-      <span>PURE POWER</span><span class="sep">⚡</span>
-      <span>ZERO LIMITS</span><span class="sep">⚡</span>
+      <span data-i18n="ticker_energy">ENERGY DRINK</span><span class="sep">⚡</span>
+      <span>35+ <span data-i18n="ticker_countries">COUNTRIES</span></span><span class="sep">⚡</span>
+      <span data-i18n="ticker_since">SINCE 1994</span><span class="sep">⚡</span>
+      <span data-i18n="ticker_pure">PURE POWER</span><span class="sep">⚡</span>
+      <span data-i18n="ticker_zero">ZERO LIMITS</span><span class="sep">⚡</span>
       <span>GOLDEN EAGLE</span><span class="sep">⚡</span>
-      <span>ENERGY DRINK</span><span class="sep">⚡</span>
-      <span>35+ COUNTRIES</span><span class="sep">⚡</span>
-      <span>SINCE 1994</span><span class="sep">⚡</span>
-      <span>PURE POWER</span><span class="sep">⚡</span>
-      <span>ZERO LIMITS</span><span class="sep">⚡</span>
+      <span data-i18n="ticker_energy">ENERGY DRINK</span><span class="sep">⚡</span>
+      <span>35+ <span data-i18n="ticker_countries">COUNTRIES</span></span><span class="sep">⚡</span>
+      <span data-i18n="ticker_since">SINCE 1994</span><span class="sep">⚡</span>
+      <span data-i18n="ticker_pure">PURE POWER</span><span class="sep">⚡</span>
+      <span data-i18n="ticker_zero">ZERO LIMITS</span><span class="sep">⚡</span>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════ PRODUCTS ═══════════════════════════════════════ -->
+  <!-- ═══ PRODUCTS ═══ -->
   <section class="section products-section" id="products">
     <div class="section-inner">
       <div class="section-header">
-        <span class="section-eyebrow">Our Range</span>
-        <h2 class="section-title">The Full <span class="highlight">Lineup</span></h2>
-        <p class="section-desc">From classic energy to tropical bliss — there's a Golden Eagle for every moment.</p>
+        <span class="section-eyebrow" data-i18n="products_eyebrow">Our Range</span>
+        <h2 class="section-title" data-i18n-html="products_title">The Full <span class="highlight">Lineup</span></h2>
+        <p class="section-desc" data-i18n="products_desc">From classic energy to tropical bliss — there's a Golden Eagle for every moment.</p>
       </div>
 
       <div class="products-grid">
 
         <div class="product-card" data-index="0">
           <div class="product-glow"></div>
-          <div class="product-badge">Bestseller</div>
+          <div class="product-badge" data-i18n="badge_bestseller">Bestseller</div>
           <div class="product-can-wrap">
             <div class="product-can classic-can">
               <span class="pc-emoji">⚡</span>
-              <span class="pc-label">CLASSIC</span>
+              <span class="pc-label" data-i18n="variant_classic">CLASSIC</span>
             </div>
           </div>
           <div class="product-info">
-            <h3>Classic</h3>
-            <p>The original. Bold caffeine kick, taurine boost, iconic golden taste.</p>
+            <h3 data-i18n="variant_classic">Classic</h3>
+            <p data-i18n="prod1_desc">The original. Bold caffeine kick, taurine boost, iconic golden taste.</p>
             <div class="product-tags">
-              <span>80mg caffeine</span>
-              <span>Taurine</span>
-              <span>B-vitamins</span>
+              <span data-i18n="prod1_t1">80mg caffeine</span>
+              <span data-i18n="prod1_t2">Taurine</span>
+              <span data-i18n="prod1_t3">B-vitamins</span>
             </div>
             <div class="product-footer">
               <span class="product-price">€1.99</span>
-              <button class="add-btn">+ Add</button>
+              <button class="add-btn" data-i18n="btn_add">+ Add</button>
             </div>
           </div>
         </div>
 
         <div class="product-card" data-index="1">
           <div class="product-glow blue-glow"></div>
-          <div class="product-badge blue-badge">Zero Sugar</div>
+          <div class="product-badge blue-badge" data-i18n="badge_zero_sugar">Zero Sugar</div>
           <div class="product-can-wrap">
             <div class="product-can sugar-can">
               <span class="pc-emoji">🔵</span>
-              <span class="pc-label">SUGAR FREE</span>
+              <span class="pc-label" data-i18n="variant_sugar_free">SUGAR FREE</span>
             </div>
           </div>
           <div class="product-info">
-            <h3>Sugar Free</h3>
-            <p>All the energy, none of the sugar. Clean fuel for the driven.</p>
+            <h3 data-i18n="variant_sugar_free">Sugar Free</h3>
+            <p data-i18n="prod2_desc">All the energy, none of the sugar. Clean fuel for the driven.</p>
             <div class="product-tags">
-              <span>0g sugar</span>
-              <span>Taurine</span>
-              <span>Stevia</span>
+              <span data-i18n="prod2_t1">0g sugar</span>
+              <span data-i18n="prod1_t2">Taurine</span>
+              <span data-i18n="prod2_t3">Stevia</span>
             </div>
             <div class="product-footer">
               <span class="product-price">€1.99</span>
-              <button class="add-btn blue-btn">+ Add</button>
+              <button class="add-btn blue-btn" data-i18n="btn_add">+ Add</button>
             </div>
           </div>
         </div>
 
         <div class="product-card" data-index="2">
           <div class="product-glow red-glow"></div>
-          <div class="product-badge red-badge">Limited</div>
+          <div class="product-badge red-badge" data-i18n="badge_limited">Limited</div>
           <div class="product-can-wrap">
             <div class="product-can red-can">
               <span class="pc-emoji">🔴</span>
-              <span class="pc-label">RED EDITION</span>
+              <span class="pc-label" data-i18n="variant_red">RED EDITION</span>
             </div>
           </div>
           <div class="product-info">
-            <h3>Red Edition</h3>
-            <p>Intense wild berry flavor. Double the boldness, double the rush.</p>
+            <h3 data-i18n="variant_red">Red Edition</h3>
+            <p data-i18n="prod3_desc">Intense wild berry flavor. Double the boldness, double the rush.</p>
             <div class="product-tags">
-              <span>Wild Berry</span>
-              <span>Intense</span>
-              <span>Bold</span>
+              <span data-i18n="prod3_t1">Wild Berry</span>
+              <span data-i18n="prod3_t2">Intense</span>
+              <span data-i18n="prod3_t3">Bold</span>
             </div>
             <div class="product-footer">
               <span class="product-price">€2.49</span>
-              <button class="add-btn red-btn">+ Add</button>
+              <button class="add-btn red-btn" data-i18n="btn_add">+ Add</button>
             </div>
           </div>
         </div>
 
         <div class="product-card" data-index="3">
           <div class="product-glow green-glow"></div>
-          <div class="product-badge green-badge">New</div>
+          <div class="product-badge green-badge" data-i18n="badge_new">New</div>
           <div class="product-can-wrap">
             <div class="product-can tropical-can">
               <span class="pc-emoji">🌴</span>
-              <span class="pc-label">TROPICAL</span>
+              <span class="pc-label" data-i18n="variant_tropical">TROPICAL</span>
             </div>
           </div>
           <div class="product-info">
-            <h3>Tropical</h3>
-            <p>Mango, passion fruit, pineapple — paradise in every sip.</p>
+            <h3 data-i18n="variant_tropical">Tropical</h3>
+            <p data-i18n="prod4_desc">Mango, passion fruit, pineapple — paradise in every sip.</p>
             <div class="product-tags">
-              <span>Mango</span>
-              <span>Passion Fruit</span>
-              <span>Exotic</span>
+              <span data-i18n="prod4_t1">Mango</span>
+              <span data-i18n="prod4_t2">Passion Fruit</span>
+              <span data-i18n="prod4_t3">Exotic</span>
             </div>
             <div class="product-footer">
               <span class="product-price">€2.49</span>
-              <button class="add-btn green-btn">+ Add</button>
+              <button class="add-btn green-btn" data-i18n="btn_add">+ Add</button>
             </div>
           </div>
         </div>
@@ -323,44 +307,44 @@
           <div class="product-can-wrap">
             <div class="product-can coffee-can">
               <span class="pc-emoji">☕</span>
-              <span class="pc-label">COFFEE</span>
+              <span class="pc-label" data-i18n="variant_coffee">COFFEE</span>
             </div>
           </div>
           <div class="product-info">
-            <h3>Coffee Edition</h3>
-            <p>Energy meets espresso. The ultimate morning power-up.</p>
+            <h3 data-i18n="prod5_name">Coffee Edition</h3>
+            <p data-i18n="prod5_desc">Energy meets espresso. The ultimate morning power-up.</p>
             <div class="product-tags">
-              <span>Espresso</span>
-              <span>Rich</span>
-              <span>Smooth</span>
+              <span data-i18n="prod5_t1">Espresso</span>
+              <span data-i18n="prod5_t2">Rich</span>
+              <span data-i18n="prod5_t3">Smooth</span>
             </div>
             <div class="product-footer">
               <span class="product-price">€2.49</span>
-              <button class="add-btn coffee-btn">+ Add</button>
+              <button class="add-btn coffee-btn" data-i18n="btn_add">+ Add</button>
             </div>
           </div>
         </div>
 
-        <div class="product-card natural-card" data-index="5">
+        <div class="product-card" data-index="5">
           <div class="product-glow green-glow"></div>
-          <div class="product-badge lime-badge">100% Natural</div>
+          <div class="product-badge lime-badge" data-i18n="badge_natural">100% Natural</div>
           <div class="product-can-wrap">
             <div class="product-can natural-can">
               <span class="pc-emoji">🍓</span>
-              <span class="pc-label">NATURAL 100%</span>
+              <span class="pc-label" data-i18n="prod6_name">NATURAL 100%</span>
             </div>
           </div>
           <div class="product-info">
-            <h3>Natural 100%</h3>
-            <p>Pure fruit. No additives, no compromise. Just nature's best.</p>
+            <h3 data-i18n="prod6_name">Natural 100%</h3>
+            <p data-i18n="prod6_desc">Pure fruit. No additives, no compromise. Just nature's best.</p>
             <div class="product-tags">
-              <span>100% Fruit</span>
-              <span>No Additives</span>
-              <span>Pure</span>
+              <span data-i18n="prod6_t1">100% Fruit</span>
+              <span data-i18n="prod6_t2">No Additives</span>
+              <span data-i18n="prod6_t3">Pure</span>
             </div>
             <div class="product-footer">
               <span class="product-price">€2.99</span>
-              <button class="add-btn lime-btn">+ Add</button>
+              <button class="add-btn lime-btn" data-i18n="btn_add">+ Add</button>
             </div>
           </div>
         </div>
@@ -369,44 +353,44 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ TASTE / INGREDIENTS ═══════════════════════════════════════ -->
+  <!-- ═══ TASTE ═══ -->
   <section class="section taste-section" id="taste">
     <div class="section-inner taste-inner">
       <div class="taste-left">
-        <span class="section-eyebrow">What's Inside</span>
-        <h2 class="section-title">Crafted For <span class="highlight">Peak</span> Performance</h2>
-        <p class="taste-desc">Every ingredient is chosen to fuel your body and sharpen your mind.</p>
+        <span class="section-eyebrow" data-i18n="taste_eyebrow">What's Inside</span>
+        <h2 class="section-title" data-i18n-html="taste_title">Crafted For <span class="highlight">Peak</span> Performance</h2>
+        <p class="taste-desc" data-i18n="taste_desc">Every ingredient is chosen to fuel your body and sharpen your mind.</p>
 
         <div class="ingredients-list">
           <div class="ingredient-item" data-delay="0">
             <div class="ing-icon">⚡</div>
             <div class="ing-info">
-              <h4>Taurine</h4>
-              <p>Enhances physical performance and reduces muscle fatigue.</p>
+              <h4 data-i18n="ing1_name">Taurine</h4>
+              <p data-i18n="ing1_desc">Enhances physical performance and reduces muscle fatigue.</p>
             </div>
             <div class="ing-bar"><div class="ing-fill" style="--pct:88%"></div></div>
           </div>
           <div class="ingredient-item" data-delay="100">
             <div class="ing-icon">☕</div>
             <div class="ing-info">
-              <h4>Caffeine</h4>
-              <p>Sharp focus and sustained energy without the crash.</p>
+              <h4 data-i18n="ing2_name">Caffeine</h4>
+              <p data-i18n="ing2_desc">Sharp focus and sustained energy without the crash.</p>
             </div>
             <div class="ing-bar"><div class="ing-fill" style="--pct:75%"></div></div>
           </div>
           <div class="ingredient-item" data-delay="200">
             <div class="ing-icon">💊</div>
             <div class="ing-info">
-              <h4>B-Vitamins</h4>
-              <p>Essential for metabolism and nervous system function.</p>
+              <h4 data-i18n="ing3_name">B-Vitamins</h4>
+              <p data-i18n="ing3_desc">Essential for metabolism and nervous system function.</p>
             </div>
             <div class="ing-bar"><div class="ing-fill" style="--pct:92%"></div></div>
           </div>
           <div class="ingredient-item" data-delay="300">
             <div class="ing-icon">🌿</div>
             <div class="ing-info">
-              <h4>Ginseng Extract</h4>
-              <p>Natural adaptogen that boosts stamina and resilience.</p>
+              <h4 data-i18n="ing4_name">Ginseng Extract</h4>
+              <p data-i18n="ing4_desc">Natural adaptogen that boosts stamina and resilience.</p>
             </div>
             <div class="ing-bar"><div class="ing-fill" style="--pct:65%"></div></div>
           </div>
@@ -425,7 +409,6 @@
               <span class="big-energy">ENERGY</span>
             </div>
           </div>
-          <!-- Floating ingredient bubbles -->
           <div class="bubble b1">⚡</div>
           <div class="bubble b2">🌿</div>
           <div class="bubble b3">☕</div>
@@ -436,7 +419,7 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+  <!-- ═══ ABOUT ═══ -->
   <section class="section about-section" id="about">
     <div class="section-inner about-inner">
 
@@ -454,41 +437,29 @@
       </div>
 
       <div class="about-content">
-        <span class="section-eyebrow">Our Story</span>
-        <h2 class="section-title">Born in Kosovo.<br/><span class="highlight">Built for the World.</span></h2>
-        <p class="about-text">Founded in 1994 in Suharekë, Kosovo, Frutex began as a dream to bring world-class beverages from the heart of the Balkans. Three decades later, Golden Eagle Energy Drink soars across 35+ countries — from Europe to the USA, Australia, Asia, and Africa.</p>
-        <p class="about-text">With over 200 passionate employees and a relentless drive for quality, we live by one truth: <em>"Happiness is helping, not profiting."</em></p>
+        <span class="section-eyebrow" data-i18n="about_eyebrow">Our Story</span>
+        <h2 class="section-title" data-i18n-html="about_title">Born in Kosovo.<br/><span class="highlight">Built for the World.</span></h2>
+        <p class="about-text" data-i18n="about_text1">Founded in 1994 in Suharekë, Kosovo, Frutex began as a dream to bring world-class beverages from the heart of the Balkans. Three decades later, Golden Eagle Energy Drink soars across 35+ countries — from Europe to the USA, Australia, Asia, and Africa.</p>
+        <p class="about-text" data-i18n-html="about_text2">With over 200 passionate employees and a relentless drive for quality, we live by one truth: <em>"Happiness is helping, not profiting."</em></p>
 
         <div class="about-pillars">
-          <div class="pillar">
-            <span class="pillar-icon">🏆</span>
-            <span>Quality & Perfection</span>
-          </div>
-          <div class="pillar">
-            <span class="pillar-icon">🌱</span>
-            <span>Sustainability</span>
-          </div>
-          <div class="pillar">
-            <span class="pillar-icon">💡</span>
-            <span>Innovation</span>
-          </div>
-          <div class="pillar">
-            <span class="pillar-icon">❤️</span>
-            <span>Customer Focus</span>
-          </div>
+          <div class="pillar"><span class="pillar-icon">🏆</span><span data-i18n="pillar1">Quality & Perfection</span></div>
+          <div class="pillar"><span class="pillar-icon">🌱</span><span data-i18n="pillar2">Sustainability</span></div>
+          <div class="pillar"><span class="pillar-icon">💡</span><span data-i18n="pillar3">Innovation</span></div>
+          <div class="pillar"><span class="pillar-icon">❤️</span><span data-i18n="pillar4">Customer Focus</span></div>
         </div>
 
-        <a href="#contact" class="btn-primary">Learn More →</a>
+        <a href="#contact" class="btn-primary"><span data-i18n="about_btn">Learn More</span> →</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ REVIEWS ═══════════════════════════════════════ -->
+  <!-- ═══ REVIEWS ═══ -->
   <section class="section reviews-section" id="reviews">
     <div class="section-inner">
       <div class="section-header">
-        <span class="section-eyebrow">Testimonials</span>
-        <h2 class="section-title">Fans <span class="highlight">Love It</span></h2>
+        <span class="section-eyebrow" data-i18n="reviews_eyebrow">Testimonials</span>
+        <h2 class="section-title" data-i18n-html="reviews_title">Fans <span class="highlight">Love It</span></h2>
       </div>
 
       <div class="reviews-track-wrap">
@@ -496,7 +467,7 @@
 
           <div class="review-card">
             <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Golden Eagle Classic is my go-to before every training session. Nothing else compares to that clean energy surge."</p>
+            <p class="review-text" data-i18n="rev1_text">"Golden Eagle Classic is my go-to before every training session. Nothing else compares to that clean energy surge."</p>
             <div class="reviewer">
               <div class="reviewer-avatar">AM</div>
               <div>
@@ -508,7 +479,7 @@
 
           <div class="review-card">
             <div class="review-stars">★★★★★</div>
-            <p class="review-text">"I switched to Sugar Free and never looked back. All the boost, none of the guilt. Absolutely love the taste."</p>
+            <p class="review-text" data-i18n="rev2_text">"I switched to Sugar Free and never looked back. All the boost, none of the guilt. Absolutely love the taste."</p>
             <div class="reviewer">
               <div class="reviewer-avatar">SL</div>
               <div>
@@ -520,7 +491,7 @@
 
           <div class="review-card featured-review">
             <div class="review-stars">★★★★★</div>
-            <p class="review-text">"The Tropical edition tastes like a vacation in a can. I've been ordering cases every month since it launched. Incredible product."</p>
+            <p class="review-text" data-i18n="rev3_text">"The Tropical edition tastes like a vacation in a can. I've been ordering cases every month since it launched. Incredible product."</p>
             <div class="reviewer">
               <div class="reviewer-avatar">JK</div>
               <div>
@@ -532,7 +503,7 @@
 
           <div class="review-card">
             <div class="review-stars">★★★★☆</div>
-            <p class="review-text">"Coffee Edition is my morning ritual now. Skip the café line — this is better and hits twice as fast. Highly recommend."</p>
+            <p class="review-text" data-i18n="rev4_text">"Coffee Edition is my morning ritual now. Skip the café line — this is better and hits twice as fast. Highly recommend."</p>
             <div class="reviewer">
               <div class="reviewer-avatar">MC</div>
               <div>
@@ -544,7 +515,7 @@
 
           <div class="review-card">
             <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Natural 100% juice is what I give my kids. Pure, clean, and they can't get enough of it. A brand I genuinely trust."</p>
+            <p class="review-text" data-i18n="rev5_text">"Natural 100% juice is what I give my kids. Pure, clean, and they can't get enough of it. A brand I genuinely trust."</p>
             <div class="reviewer">
               <div class="reviewer-avatar">EM</div>
               <div>
@@ -571,91 +542,82 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+  <!-- ═══ CONTACT ═══ -->
   <section class="section contact-section" id="contact">
     <div class="section-inner contact-inner">
       <div class="contact-left">
-        <span class="section-eyebrow">Get In Touch</span>
-        <h2 class="section-title">Ready to <span class="highlight">Soar?</span></h2>
-        <p class="contact-desc">Whether you're a distributor, retailer, or just a fan — we want to hear from you.</p>
+        <span class="section-eyebrow" data-i18n="contact_eyebrow">Get In Touch</span>
+        <h2 class="section-title" data-i18n-html="contact_title">Ready to <span class="highlight">Soar?</span></h2>
+        <p class="contact-desc" data-i18n="contact_desc">Whether you're a distributor, retailer, or just a fan — we want to hear from you.</p>
         <div class="contact-details">
-          <div class="contact-item">
-            <span class="contact-ico">📍</span>
-            <span>Zona Industriale Shirokë, Suharekë 23000, Kosovo</span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-ico">📞</span>
-            <span>+383 44 119 925</span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-ico">🌐</span>
-            <span>goldeneagle-ks.com</span>
-          </div>
+          <div class="contact-item"><span class="contact-ico">📍</span><span>Zona Industriale Shirokë, Suharekë 23000, Kosovo</span></div>
+          <div class="contact-item"><span class="contact-ico">📞</span><span>+383 44 119 925</span></div>
+          <div class="contact-item"><span class="contact-ico">🌐</span><span>goldeneagle-ks.com</span></div>
         </div>
       </div>
 
       <form class="contact-form" id="contact-form">
         <div class="form-row">
           <div class="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Your name" required />
+            <label data-i18n="form_name">Name</label>
+            <input type="text" data-i18n-placeholder="form_name_ph" placeholder="Your name" required />
           </div>
           <div class="form-group">
-            <label>Email</label>
+            <label data-i18n="form_email">Email</label>
             <input type="email" placeholder="you@example.com" required />
           </div>
         </div>
         <div class="form-group">
-          <label>Subject</label>
+          <label data-i18n="form_subject">Subject</label>
           <select>
-            <option>Distribution Inquiry</option>
-            <option>Wholesale Order</option>
-            <option>Partnership</option>
-            <option>General Question</option>
+            <option data-i18n="form_opt1">Distribution Inquiry</option>
+            <option data-i18n="form_opt2">Wholesale Order</option>
+            <option data-i18n="form_opt3">Partnership</option>
+            <option data-i18n="form_opt4">General Question</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Tell us what you need..."></textarea>
+          <label data-i18n="form_msg">Message</label>
+          <textarea rows="5" data-i18n-placeholder="form_msg_ph" placeholder="Tell us what you need..."></textarea>
         </div>
         <button type="submit" class="btn-primary submit-btn">
-          Send Message ⚡
+          <span data-i18n="form_submit">Send Message</span> ⚡
         </button>
       </form>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="logo-icon">⚡</span>
         <span class="logo-text">GOLDEN EAGLE</span>
-        <p>Energy That Soars.<br/>Made in Kosovo. Loved Worldwide.</p>
+        <p data-i18n="footer_tagline">Energy That Soars.<br/>Made in Kosovo. Loved Worldwide.</p>
       </div>
       <div class="footer-links">
-        <h4>Products</h4>
+        <h4 data-i18n="nav_products">Products</h4>
         <ul>
-          <li><a href="#">Classic</a></li>
-          <li><a href="#">Sugar Free</a></li>
-          <li><a href="#">Red Edition</a></li>
-          <li><a href="#">Tropical</a></li>
-          <li><a href="#">Coffee</a></li>
-          <li><a href="#">Natural 100%</a></li>
+          <li><a href="#" data-i18n="variant_classic">Classic</a></li>
+          <li><a href="#" data-i18n="variant_sugar_free">Sugar Free</a></li>
+          <li><a href="#" data-i18n="variant_red">Red Edition</a></li>
+          <li><a href="#" data-i18n="variant_tropical">Tropical</a></li>
+          <li><a href="#" data-i18n="variant_coffee">Coffee</a></li>
+          <li><a href="#" data-i18n="prod6_name">Natural 100%</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Company</h4>
+        <h4 data-i18n="footer_company">Company</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Foundation</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Brand Assets</a></li>
+          <li><a href="#" data-i18n="footer_about">About Us</a></li>
+          <li><a href="#" data-i18n="footer_foundation">Foundation</a></li>
+          <li><a href="#" data-i18n="footer_careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer_news">News</a></li>
+          <li><a href="#" data-i18n="footer_brand">Brand Assets</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Follow Us</h4>
+        <h4 data-i18n="footer_follow">Follow Us</h4>
         <div class="social-links">
           <a href="#" class="social-btn">Instagram</a>
           <a href="#" class="social-btn">Facebook</a>
@@ -665,8 +627,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Frutex / Golden Eagle. All rights reserved.</span>
-      <span>Made with ⚡ in Kosovo</span>
+      <span data-i18n="footer_copy">© 2025 Frutex / Golden Eagle. All rights reserved.</span>
+      <span data-i18n="footer_made">Made with ⚡ in Kosovo</span>
     </div>
   </footer>
 

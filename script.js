@@ -338,16 +338,16 @@ variantCards.forEach(card => {
     }
 
     if (heroCanImg && card.dataset.img) {
-      if (heroCanImg.classList.contains('can-flip')) return;
-      heroCanImg.classList.add('can-flip');
+      if (heroCanImg.classList.contains('can-spin')) return;
+      heroCanImg.classList.add('can-spin');
       setTimeout(() => {
         heroCanImg.src = card.dataset.img;
         heroCanImg.onerror = () => {
           heroCanImg.src = 'https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png';
         };
-      }, 252); // midpoint of flip when opacity = 0
+      }, 410); // 50% of 820ms spin — can is invisible at 180°
       heroCanImg.addEventListener('animationend', () => {
-        heroCanImg.classList.remove('can-flip');
+        heroCanImg.classList.remove('can-spin');
         heroCanImg.style.animationPlayState = 'running';
       }, { once: true });
     }

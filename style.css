@@ -386,12 +386,13 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
   100% { transform: perspective(900px) rotateY(-22deg) rotateX(6deg)  scale(1);    }
 }
 
-/* Flip swap when changing variant */
-@keyframes canFlipSwap {
-  0%   { transform: perspective(900px) rotateY(0deg)    scale(1);    opacity: 1; }
-  35%  { transform: perspective(900px) rotateY(-90deg)  scale(0.72); opacity: 0; }
-  65%  { transform: perspective(900px) rotateY(90deg)   scale(0.72); opacity: 0; }
-  100% { transform: perspective(900px) rotateY(0deg)    scale(1);    opacity: 1; }
+/* Full 360° spin when changing variant */
+@keyframes canSpin360 {
+  0%   { transform: perspective(900px) rotateY(0deg)   scale(1);    opacity: 1; }
+  40%  { transform: perspective(900px) rotateY(144deg) scale(0.55); opacity: 0.15; }
+  50%  { transform: perspective(900px) rotateY(180deg) scale(0.35); opacity: 0; }
+  60%  { transform: perspective(900px) rotateY(216deg) scale(0.55); opacity: 0.15; }
+  100% { transform: perspective(900px) rotateY(360deg) scale(1);    opacity: 1; }
 }
 
 .can-img {
@@ -404,8 +405,8 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
   transform-origin: center 80%;
   animation: canRock 6s ease-in-out infinite;
 }
-.can-img.can-flip {
-  animation: canFlipSwap .72s cubic-bezier(.4,0,.2,1) forwards;
+.can-img.can-spin {
+  animation: canSpin360 .82s cubic-bezier(.4,0,.2,1) forwards !important;
 }
 
 .can-body {

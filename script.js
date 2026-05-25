@@ -303,34 +303,53 @@ if (canWrap && can3d) {
     const cy = rect.top  + rect.height / 2;
     const dx = (e.clientX - cx) / (rect.width  / 2);
     const dy = (e.clientY - cy) / (rect.height / 2);
-    can3d.style.transform = `perspective(800px) rotateY(${dx * 18}deg) rotateX(${-dy * 12}deg)`;
+    can3d.style.transform = `perspective(900px) rotateY(${dx * 22}deg) rotateX(${-dy * 14}deg)`;
+    const ci = document.getElementById('can-img');
+    if (ci && !ci.classList.contains('can-flip')) ci.style.animationPlayState = 'paused';
   });
   canWrap.addEventListener('mouseleave', () => {
-    can3d.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+    can3d.style.transform = '';
+    const ci = document.getElementById('can-img');
+    if (ci) ci.style.animationPlayState = 'running';
   });
 }
 
 /* ── Variant picker ── */
 const variantCards = document.querySelectorAll('.variant-card');
-const canFace = document.querySelector('.can-face');
 const canGlow = document.querySelector('.can-glow');
+const heroCanImg = document.getElementById('can-img');
 
-const variantStyles = {
-  classic:      { bg: 'linear-gradient(160deg,#2a1e00,#0a0a0a 40%,#1a0f00)', glow: 'rgba(212,160,23,.35)' },
-  'sugar-free': { bg: 'linear-gradient(160deg,#002a40,#0a0a0a 40%,#001a2a)', glow: 'rgba(0,200,255,.35)' },
-  red:          { bg: 'linear-gradient(160deg,#3a0010,#0a0a0a 40%,#2a0008)', glow: 'rgba(255,34,68,.35)' },
-  tropical:     { bg: 'linear-gradient(160deg,#003a18,#0a0a0a 40%,#001a0d)', glow: 'rgba(0,230,118,.35)' },
-  coffee:       { bg: 'linear-gradient(160deg,#2a1500,#0a0a0a 40%,#1a0d00)', glow: 'rgba(139,94,60,.35)' },
+const variantGlows = {
+  classic:      'rgba(212,160,23,.4)',
+  'sugar-free': 'rgba(0,200,255,.4)',
+  red:          'rgba(255,34,68,.4)',
+  tropical:     'rgba(0,230,118,.4)',
+  coffee:       'rgba(139,94,60,.4)',
 };
 
 variantCards.forEach(card => {
   card.addEventListener('click', () => {
     variantCards.forEach(c => c.classList.remove('active'));
     card.classList.add('active');
-    const style = variantStyles[card.dataset.flavor];
-    if (style && canFace) {
-      canFace.style.background = style.bg;
-      if (canGlow) canGlow.style.background = `radial-gradient(circle,${style.glow} 0%,transparent 70%)`;
+
+    const glow = variantGlows[card.dataset.flavor];
+    if (glow && canGlow) {
+      canGlow.style.background = `radial-gradient(circle,${glow} 0%,transparent 70%)`;
+    }
+
+    if (heroCanImg && card.dataset.img) {
+      if (heroCanImg.classList.contains('can-flip')) return;
+      heroCanImg.classList.add('can-flip');
+      setTimeout(() => {
+        heroCanImg.src = card.dataset.img;
+        heroCanImg.onerror = () => {
+          heroCanImg.src = 'https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png';
+        };
+      }, 252); // midpoint of flip when opacity = 0
+      heroCanImg.addEventListener('animationend', () => {
+        heroCanImg.classList.remove('can-flip');
+        heroCanImg.style.animationPlayState = 'running';
+      }, { once: true });
     }
   });
 });

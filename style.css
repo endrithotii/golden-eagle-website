@@ -354,7 +354,59 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
 }
 @keyframes glowPulse { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.2)} }
 
-.can-3d { perspective: 800px; }
+.can-3d {
+  perspective: 900px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+
+/* Glint sweep across the can */
+.can-shine {
+  position: absolute;
+  top: -5%; left: -40%;
+  width: 22%; height: 110%;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+  transform: skewX(-12deg);
+  pointer-events: none;
+  animation: canShine 5s ease-in-out infinite 1.8s;
+  z-index: 10;
+}
+@keyframes canShine {
+  0%,55%,100% { left: -40%; opacity: 0; }
+  57%          { opacity: 1; }
+  90%          { left: 160%; opacity: 0; }
+}
+
+/* Continuous 3D rock */
+@keyframes canRock {
+  0%   { transform: perspective(900px) rotateY(-22deg) rotateX(6deg)  scale(1);    }
+  25%  { transform: perspective(900px) rotateY(10deg)  rotateX(-4deg) scale(1.03); }
+  50%  { transform: perspective(900px) rotateY(22deg)  rotateX(6deg)  scale(1);    }
+  75%  { transform: perspective(900px) rotateY(-10deg) rotateX(-4deg) scale(1.03); }
+  100% { transform: perspective(900px) rotateY(-22deg) rotateX(6deg)  scale(1);    }
+}
+
+/* Flip swap when changing variant */
+@keyframes canFlipSwap {
+  0%   { transform: perspective(900px) rotateY(0deg)    scale(1);    opacity: 1; }
+  35%  { transform: perspective(900px) rotateY(-90deg)  scale(0.72); opacity: 0; }
+  65%  { transform: perspective(900px) rotateY(90deg)   scale(0.72); opacity: 0; }
+  100% { transform: perspective(900px) rotateY(0deg)    scale(1);    opacity: 1; }
+}
+
+.can-img {
+  width: 172px;
+  height: auto;
+  max-height: 390px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 60px rgba(0,0,0,.75)) drop-shadow(0 0 40px rgba(212,160,23,.3));
+  display: block;
+  transform-origin: center 80%;
+  animation: canRock 6s ease-in-out infinite;
+}
+.can-img.can-flip {
+  animation: canFlipSwap .72s cubic-bezier(.4,0,.2,1) forwards;
+}
 
 .can-body {
   width: var(--can-w);
@@ -484,6 +536,16 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
   box-shadow: 0 0 20px rgba(212,160,23,.15);
 }
 .variant-icon { font-size: 1.4rem; }
+.variant-thumb {
+  width: 34px;
+  height: 54px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.6));
+  transition: transform .3s ease;
+}
+.variant-card:hover .variant-thumb { transform: scale(1.1) rotate(-3deg); }
+.variant-card.active .variant-thumb { transform: scale(1.05); }
 .variant-info { display: flex; flex-direction: column; }
 .variant-name { font-size: .875rem; font-weight: 600; }
 .variant-price { font-size: .75rem; color: var(--muted); }
@@ -617,6 +679,36 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
 .product-can-wrap {
   display: flex; justify-content: center;
   margin: 8px 0 24px;
+  min-height: 180px;
+  align-items: center;
+}
+
+@keyframes productRock {
+  0%,100% { transform: perspective(320px) rotateY(-10deg) rotateX(4deg)  scale(1);    }
+  50%     { transform: perspective(320px) rotateY(10deg)  rotateX(-4deg) scale(1.04); }
+}
+
+.product-can-img {
+  width: 85px;
+  height: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.65));
+  transform-origin: center bottom;
+  animation: productRock 3.8s ease-in-out infinite;
+  transition: filter .4s ease;
+}
+/* stagger each card so they rock like a wave */
+.product-card:nth-child(1) .product-can-img { animation-delay:  0s;    }
+.product-card:nth-child(2) .product-can-img { animation-delay: -0.63s; }
+.product-card:nth-child(3) .product-can-img { animation-delay: -1.27s; }
+.product-card:nth-child(4) .product-can-img { animation-delay: -1.9s;  }
+.product-card:nth-child(5) .product-can-img { animation-delay: -2.53s; }
+.product-card:nth-child(6) .product-can-img { animation-delay: -3.17s; }
+
+.product-card:hover .product-can-img {
+  animation: none;
+  transform: perspective(320px) rotateY(-32deg) rotateX(10deg) scale(1.18) translateY(-10px);
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,.8)) drop-shadow(0 0 28px rgba(212,160,23,.22));
 }
 .product-can {
   width: 90px; height: 180px;

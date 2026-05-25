@@ -97,17 +97,11 @@
       <div class="can-container" id="can-container">
         <div class="can-glow"></div>
         <div class="can-3d" id="can-3d">
-          <div class="can-body">
-            <div class="can-face front">
-              <div class="can-brand-stripe"></div>
-              <div class="can-logo-wrap">
-                <span class="can-eagle">🦅</span>
-                <span class="can-name">GOLDEN<br/>EAGLE</span>
-              </div>
-              <div class="can-tagline">ENERGY DRINK</div>
-              <div class="can-volume">250 ml</div>
-            </div>
-          </div>
+          <img class="can-img" id="can-img"
+               src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png"
+               alt="Golden Eagle Energy Drink"
+               onerror="this.onerror=null;this.src='https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png'" />
+          <div class="can-shine"></div>
         </div>
         <div class="orbit-particle op-1">⚡</div>
         <div class="orbit-particle op-2">✦</div>
@@ -120,36 +114,36 @@
     <div class="hero-right">
       <p class="variants-label" data-i18n="hero_variants_label">Choose Variant</p>
       <div class="variant-list" id="variant-list">
-        <div class="variant-card active" data-flavor="classic" data-color="#d4a017" data-bg="#1a1200">
-          <div class="variant-icon">⚡</div>
+        <div class="variant-card active" data-flavor="classic" data-color="#d4a017" data-bg="#1a1200" data-img="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png">
+          <img class="variant-thumb" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png" alt="Classic" />
           <div class="variant-info">
             <span class="variant-name" data-i18n="variant_classic">Classic</span>
             <span class="variant-price">€1.99</span>
           </div>
         </div>
-        <div class="variant-card" data-flavor="sugar-free" data-color="#00c8ff" data-bg="#00111a">
-          <div class="variant-icon">🔵</div>
+        <div class="variant-card" data-flavor="sugar-free" data-color="#00c8ff" data-bg="#00111a" data-img="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Sugar-Free-250ml.png">
+          <img class="variant-thumb" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Sugar-Free-250ml.png" alt="Sugar Free" />
           <div class="variant-info">
             <span class="variant-name" data-i18n="variant_sugar_free">Sugar Free</span>
             <span class="variant-price">€1.99</span>
           </div>
         </div>
-        <div class="variant-card" data-flavor="red" data-color="#ff2244" data-bg="#1a0008">
-          <div class="variant-icon">🔴</div>
+        <div class="variant-card" data-flavor="red" data-color="#ff2244" data-bg="#1a0008" data-img="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Red-Edition-250ml.png">
+          <img class="variant-thumb" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Red-Edition-250ml.png" alt="Red Edition" />
           <div class="variant-info">
             <span class="variant-name" data-i18n="variant_red">Red Edition</span>
             <span class="variant-price">€2.49</span>
           </div>
         </div>
-        <div class="variant-card" data-flavor="tropical" data-color="#00e676" data-bg="#001a0a">
-          <div class="variant-icon">🌴</div>
+        <div class="variant-card" data-flavor="tropical" data-color="#00e676" data-bg="#001a0a" data-img="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Junior-250ml.png">
+          <img class="variant-thumb" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Junior-250ml.png" alt="Tropical" onerror="this.onerror=null;this.src='https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png'" />
           <div class="variant-info">
             <span class="variant-name" data-i18n="variant_tropical">Tropical</span>
             <span class="variant-price">€2.49</span>
           </div>
         </div>
-        <div class="variant-card" data-flavor="coffee" data-color="#8b5e3c" data-bg="#120800">
-          <div class="variant-icon">☕</div>
+        <div class="variant-card" data-flavor="coffee" data-color="#8b5e3c" data-bg="#120800" data-img="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Coffee-Edition-250ml.png">
+          <img class="variant-thumb" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Coffee-Edition-250ml.png" alt="Coffee" onerror="this.onerror=null;this.src='https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png'" />
           <div class="variant-info">
             <span class="variant-name" data-i18n="variant_coffee">Coffee</span>
             <span class="variant-price">€2.49</span>
@@ -210,10 +204,7 @@
           <div class="product-glow"></div>
           <div class="product-badge" data-i18n="badge_bestseller">Bestseller</div>
           <div class="product-can-wrap">
-            <div class="product-can classic-can">
-              <span class="pc-emoji">⚡</span>
-              <span class="pc-label" data-i18n="variant_classic">CLASSIC</span>
-            </div>
+            <img class="product-can-img" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png" alt="Golden Eagle Classic" />
           </div>
           <div class="product-info">
             <h3 data-i18n="variant_classic">Classic</h3>
@@ -234,10 +225,7 @@
           <div class="product-glow blue-glow"></div>
           <div class="product-badge blue-badge" data-i18n="badge_zero_sugar">Zero Sugar</div>
           <div class="product-can-wrap">
-            <div class="product-can sugar-can">
-              <span class="pc-emoji">🔵</span>
-              <span class="pc-label" data-i18n="variant_sugar_free">SUGAR FREE</span>
-            </div>
+            <img class="product-can-img" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Sugar-Free-250ml.png" alt="Golden Eagle Sugar Free" />
           </div>
           <div class="product-info">
             <h3 data-i18n="variant_sugar_free">Sugar Free</h3>
@@ -258,10 +246,7 @@
           <div class="product-glow red-glow"></div>
           <div class="product-badge red-badge" data-i18n="badge_limited">Limited</div>
           <div class="product-can-wrap">
-            <div class="product-can red-can">
-              <span class="pc-emoji">🔴</span>
-              <span class="pc-label" data-i18n="variant_red">RED EDITION</span>
-            </div>
+            <img class="product-can-img" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Red-Edition-250ml.png" alt="Golden Eagle Red Edition" />
           </div>
           <div class="product-info">
             <h3 data-i18n="variant_red">Red Edition</h3>
@@ -282,10 +267,7 @@
           <div class="product-glow green-glow"></div>
           <div class="product-badge green-badge" data-i18n="badge_new">New</div>
           <div class="product-can-wrap">
-            <div class="product-can tropical-can">
-              <span class="pc-emoji">🌴</span>
-              <span class="pc-label" data-i18n="variant_tropical">TROPICAL</span>
-            </div>
+            <img class="product-can-img" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Junior-250ml.png" alt="Golden Eagle Tropical" onerror="this.onerror=null;this.src='https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png'" />
           </div>
           <div class="product-info">
             <h3 data-i18n="variant_tropical">Tropical</h3>
@@ -305,10 +287,7 @@
         <div class="product-card" data-index="4">
           <div class="product-glow coffee-glow"></div>
           <div class="product-can-wrap">
-            <div class="product-can coffee-can">
-              <span class="pc-emoji">☕</span>
-              <span class="pc-label" data-i18n="variant_coffee">COFFEE</span>
-            </div>
+            <img class="product-can-img" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Coffee-Edition-250ml.png" alt="Golden Eagle Coffee" onerror="this.onerror=null;this.src='https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-250ml.png'" />
           </div>
           <div class="product-info">
             <h3 data-i18n="prod5_name">Coffee Edition</h3>
@@ -329,10 +308,7 @@
           <div class="product-glow green-glow"></div>
           <div class="product-badge lime-badge" data-i18n="badge_natural">100% Natural</div>
           <div class="product-can-wrap">
-            <div class="product-can natural-can">
-              <span class="pc-emoji">🍓</span>
-              <span class="pc-label" data-i18n="prod6_name">NATURAL 100%</span>
-            </div>
+            <img class="product-can-img" src="https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Natural-250ml.png" alt="Golden Eagle Natural 100%" onerror="this.onerror=null;this.src='https://goldeneagle-ks.com/wp-content/uploads/2023/11/Golden-Eagle-Junior-250ml.png'" />
           </div>
           <div class="product-info">
             <h3 data-i18n="prod6_name">Natural 100%</h3>
